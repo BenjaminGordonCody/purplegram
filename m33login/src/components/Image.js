@@ -1,3 +1,5 @@
+import { PicButtons } from "./PicButtons";
+
 export const Image = ({ url, index }) => {
   console.log(url);
   return (
@@ -9,6 +11,7 @@ export const Image = ({ url, index }) => {
           backgroundSize: "cover",
         }}
       />
+      <PicButtons />
     </div>
   );
 };

@@ -15,3 +15,10 @@ export const fetchRequest = async (setUser, username, email, password) => {
     console.log(error);
   }
 };
+
+export const fetchPicsum = async (num, setPicArr) => {
+  const response = await fetch(`https://picsum.photos/v2/list?page=${num}`);
+  const data = await response.json();
+  console.log(data);
+  setPicArr(data);
+};

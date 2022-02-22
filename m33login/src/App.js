@@ -4,6 +4,7 @@ import { fetchRequest } from "./utils";
 import { useState } from "react";
 import { Header } from "./components/Header";
 import { Login } from "./components/LogIn";
+import { Pinboard } from "./components/Pinboard";
 
 function App() {
   // states
@@ -22,7 +23,7 @@ function App() {
     <div className="App">
       <Header user={user} />
       {user ? (
-        "hello"
+        <Pinboard />
       ) : (
         <Login p={{ submitHandler, setUsername, setEmail, setPassword }} />
       )}

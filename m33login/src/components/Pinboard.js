@@ -1,21 +1,30 @@
 import { useEffect, useState } from "react";
 import { fetchPicsum } from "../utils";
 import { Image } from "./Image";
+import { PageNumber } from "./PageNumber";
 
 export const Pinboard = () => {
-  //states
+  //states && variables
   const [page, setPage] = useState();
   const [picArr, setPicArr] = useState([]);
+  const pages = [1, 2, 3, 4, 5, 6, 7];
   try {
     useEffect(() => {
       fetchPicsum(page, setPicArr);
     }, [page]);
 
     return (
-      <div id="pinboard">
-        {picArr.map((pic, index) => (
-          <Image url={pic.download_url} index={index} />
-        ))}
+      <div>
+        <div id="pinboard">
+          {picArr.map((pic, index) => (
+            <Image url={pic.download_url} index={index} />
+          ))}
+        </div>
+        <div id="pageSelector">
+          {pages.map((pageNum) => (
+            <PageNumber pageNum={pageNum} setPage={setPage} />
+          ))}
+        </div>
       </div>
     );
   } catch (err) {

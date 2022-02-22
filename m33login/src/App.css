@@ -6,15 +6,15 @@
 
 .picContainer {
   margin: 10px;
-  padding: 10px;
+  padding: 15px;
   border: 1px solid black;
-  border-radius: 13px;
+  border-radius: 6px;
   width: fit-content;
   flex: 0;
 }
 
 .image {
-  width: 25vw;
+  width: 20vw;
   height: 20vw;
   border-radius: 10px;
 }

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchPicsum } from "../utils";
+import { Image } from "./Image";
 
 export const Pinboard = () => {
   //states
@@ -10,7 +11,13 @@ export const Pinboard = () => {
       fetchPicsum(page, setPicArr);
     }, [page]);
 
-    return <div>{picArr.map((pic) => pic.url)}</div>;
+    return (
+      <div id="pinboard">
+        {picArr.map((pic, index) => (
+          <Image url={pic.download_url} index={index} />
+        ))}
+      </div>
+    );
   } catch (err) {
     console.log(err.message);
     return <div></div>;

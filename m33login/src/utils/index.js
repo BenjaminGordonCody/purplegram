@@ -17,7 +17,9 @@ export const fetchRequest = async (setUser, username, email, password) => {
 };
 
 export const fetchPicsum = async (num, setPicArr) => {
-  const response = await fetch(`https://picsum.photos/v2/list?page=${num}`);
+  const response = await fetch(
+    `https://picsum.photos/v2/list?page=${num}&limit=15`
+  );
   const data = await response.json();
   console.log(data);
   setPicArr(data);

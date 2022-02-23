@@ -1,9 +1,10 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { submitHandler } from "./utils";
+
 import { useState } from "react";
 import { Header } from "./components/Header";
 import { Login } from "./components/LogIn";
+import { SignUp } from "./components/Signup";
 import { Pinboard } from "./components/Pinboard";
 
 function App() {
@@ -19,18 +20,28 @@ function App() {
       {user ? (
         <Pinboard />
       ) : (
-        <Login
-          p={{
-            setUser,
-            username,
-            email,
-            password,
-            submitHandler,
-            setUsername,
-            setEmail,
-            setPassword,
-          }}
-        />
+        <div>
+          <Login
+            p={{
+              setUser,
+              username,
+              password,
+              setUsername,
+              setPassword,
+            }}
+          />
+          <SignUp
+            p={{
+              setUser,
+              username,
+              email,
+              password,
+              setUsername,
+              setEmail,
+              setPassword,
+            }}
+          />
+        </div>
       )}
     </div>
   );

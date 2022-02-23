@@ -1,10 +1,11 @@
 import { Input } from "./Input";
+import { submitHandler } from "../utils";
 
 export const SignUp = ({ p }) => {
   return (
     <form
       onSubmit={(e, p) => {
-        p.submitHandler(e, p.setUser, p.username, p.email, p.password);
+        submitHandler(e, p.setUser, p.username, p.email, p.password);
       }}
     >
       <Input setter={p.setUsername} />

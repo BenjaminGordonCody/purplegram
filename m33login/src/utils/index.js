@@ -24,3 +24,8 @@ export const fetchPicsum = async (num, setPicArr) => {
   console.log(data);
   setPicArr(data);
 };
+
+export const submitHandler = (e, setUser, username, email, password) => {
+  e.preventDefault();
+  fetchRequest(setUser, username, email, password);
+};

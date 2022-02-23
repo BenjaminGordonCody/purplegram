@@ -21,7 +21,6 @@ export const fetchPicsum = async (num, setPicArr) => {
     `https://picsum.photos/v2/list?page=${num}&limit=15`
   );
   const data = await response.json();
-  console.log(data);
   setPicArr(data);
 };
 

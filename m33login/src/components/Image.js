@@ -1,7 +1,6 @@
 import { PicButtons } from "./PicButtons";
 
 export const Image = ({ url, index }) => {
-  console.log(url);
   return (
     <div className={"picContainer " + index}>
       <div

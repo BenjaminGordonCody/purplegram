@@ -17,12 +17,16 @@ export const Pinboard = () => {
       <div>
         <div id="pinboard">
           {picArr.map((pic, index) => (
-            <Image url={pic.download_url} index={index} />
+            <Image url={pic.download_url} key={"image" + index} />
           ))}
         </div>
         <div id="pageSelector">
           {pages.map((pageNum) => (
-            <PageNumber pageNum={pageNum} setPage={setPage} />
+            <PageNumber
+              pageNum={pageNum}
+              setPage={setPage}
+              key={"pagenum" + pageNum}
+            />
           ))}
         </div>
       </div>

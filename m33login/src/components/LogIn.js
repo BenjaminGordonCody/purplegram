@@ -1,12 +1,13 @@
 import { Input } from "./Input";
-import { submitHandler } from "../utils";
+import { submitLogInHandler } from "../utils";
 
 export const Login = ({ p }) => {
+  //p does recieve state values
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        submitHandler(e, p.setUser, p.username, p.email, p.password);
+        submitLogInHandler(e, p.setUser, p.username, p.password);
       }}
     >
       <h1>Log In!</h1>

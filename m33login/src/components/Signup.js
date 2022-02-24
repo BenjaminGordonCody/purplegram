@@ -1,12 +1,12 @@
 import { Input } from "./Input";
-import { submitHandler } from "../utils";
+import { submitSignUpHandler } from "../utils";
 
 export const SignUp = ({ p }) => {
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        submitHandler(e, p.setUser, p.username, p.email, p.password);
+        submitSignUpHandler(e, p.setUser, p.username, p.email, p.password);
       }}
     >
       <h1>Sign up!</h1>

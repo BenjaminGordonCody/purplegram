@@ -1,7 +1,7 @@
 import { CrudButtons } from "./CRUDButtons";
 import { Logo } from "./Logo";
 
-export const Header = ({ user }) => {
+export const Header = ({ user, setUser }) => {
   let headerMessage;
 
   if (user.hasOwnProperty("err")) {
@@ -15,7 +15,7 @@ export const Header = ({ user }) => {
     <div id="header">
       <Logo />
       <h3>{headerMessage}</h3>
-      <CrudButtons user={user} />
+      {user ? <CrudButtons user={user} setUser={setUser} /> : ""}
     </div>
   );
 };

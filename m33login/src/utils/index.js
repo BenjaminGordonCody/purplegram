@@ -41,8 +41,7 @@ export const fetchRequestLogIn = async (setUser, username, password) => {
   }
 };
 
-export const fetchRequestDeleteUser = async (user) => {
-  const body = JSON.stringify({ username: user.username });
+export const fetchRequestDeleteUser = async (user, setUser) => {
   try {
     const response = await fetch(`${process.env.REACT_APP_REST_API}user`, {
       method: "DELETE",
@@ -51,7 +50,9 @@ export const fetchRequestDeleteUser = async (user) => {
     });
     console.log(response);
     const data = await response.json();
-    console.log(data);
+    if (data.deleteCount > 0) {
+      setUser(false);
+    }
   } catch (error) {
     console.log(error.message);
   }

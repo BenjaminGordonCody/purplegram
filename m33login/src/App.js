@@ -16,7 +16,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header user={user} />
+      <Header user={user} setUser={setUser} />
       {user ? (
         <Pinboard />
       ) : (

@@ -2,7 +2,7 @@ import { fetchRequestDeleteUser } from "../utils";
 
 export const CrudButtons = ({ user, setUser }) => {
   return (
-    <div className="crudButtons">
+    <div id="crudButtons">
       <button
         onClick={() => {
           fetchRequestDeleteUser(user, setUser);

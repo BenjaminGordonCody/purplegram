@@ -20,7 +20,7 @@ function App() {
       {user.hasOwnProperty("token") ? (
         <Pinboard />
       ) : (
-        <div>
+        <div id="entrance">
           <Login
             p={{
               setUser,

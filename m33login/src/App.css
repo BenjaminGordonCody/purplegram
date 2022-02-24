@@ -21,3 +21,18 @@
   background-color: blueviolet;
   background-blend-mode: screen;
 }
+
+#header {
+  display: flex;
+  position: sticky;
+  top: 0px;
+  background-color: blueviolet;
+  color: aliceblue;
+  align-items: baseline;
+  padding-left: 20px;
+}
+
+#logo {
+  font-family: "Arial Narrow Bold", sans-serif;
+  margin-right: 30px;
+}

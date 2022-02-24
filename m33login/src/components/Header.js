@@ -1,3 +1,5 @@
+import { Logo } from "./Logo";
+
 export const Header = ({ user }) => {
   let headerMessage;
 
@@ -9,8 +11,9 @@ export const Header = ({ user }) => {
     headerMessage = "Please log in";
   }
   return (
-    <div className="header">
-      <h2>{headerMessage}</h2>
+    <div id="header">
+      <Logo />
+      <h3>{headerMessage}</h3>
     </div>
   );
 };

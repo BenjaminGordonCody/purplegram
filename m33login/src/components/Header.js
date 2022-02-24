@@ -1,3 +1,4 @@
+import { CrudButtons } from "./CRUDButtons";
 import { Logo } from "./Logo";
 
 export const Header = ({ user }) => {
@@ -14,6 +15,7 @@ export const Header = ({ user }) => {
     <div id="header">
       <Logo />
       <h3>{headerMessage}</h3>
+      <CrudButtons user={user} />
     </div>
   );
 };

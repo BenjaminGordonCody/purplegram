@@ -15,7 +15,7 @@ export const fetchRequestSignUp = async (
       }),
     });
     const data = await response.json();
-    setUser(data);
+    setUser(data.user);
   } catch (error) {
     console.log(error);
   }
@@ -41,6 +41,21 @@ export const fetchRequestLogIn = async (setUser, username, password) => {
   }
 };
 
+export const fetchRequestDeleteUser = async (user) => {
+  const body = JSON.stringify({ username: user.username });
+  try {
+    const response = await fetch(`${process.env.REACT_APP_REST_API}user`, {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username: user.username }),
+    });
+    console.log(response);
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log(error.message);
+  }
+};
 export const fetchPicsum = async (num, setPicArr) => {
   const response = await fetch(
     `https://picsum.photos/v2/list?page=${num}&limit=15`

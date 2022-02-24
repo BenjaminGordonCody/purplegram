@@ -9,7 +9,7 @@ import { Pinboard } from "./components/Pinboard";
 
 function App() {
   // states
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState(false);
   const [username, setUsername] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
@@ -17,7 +17,7 @@ function App() {
   return (
     <div className="App">
       <Header user={user} />
-      {user.hasOwnProperty("token") ? (
+      {user ? (
         <Pinboard />
       ) : (
         <div id="entrance">
